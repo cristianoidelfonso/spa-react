@@ -1,13 +1,423 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*General*/
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: "Helvetica Neue", sans-serif;
+    color: #333;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav {
+    background: #38777E;
+}
+
+.nav a {
+    text-align: center;
+    padding: 10px 0;
+    color: #fff;
+}
+
+.nav a:hover {
+    background: #51A8B1;
+}
+
+.address {
+    text-align: center;
+}
+
+.address img {
+    vertical-align: middle;
+}
+
+.image-gallery, .information {
+    float: left;
+}
+
+.information li {
+    list-style: none;
+    line-height: 35px;
+    padding-left: 20px;
+}
+
+.mapsImovel {
+    float: left;
+    width: 100%;
+    margin: 35px 0;
+}
+
+.mapsImovel iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+.informationText {
+    float: left;
+    width: 90%;
+    margin: 30px 5%;
+    line-height: 35px;
+}
+
+/*Small Smartphones*/
+
+@media screen and (max-width: 480px) {
+    .header {
+        display: flex;
+        background: #efefef;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+    .nav {
+        display: none;
+        flex-direction: column;
+        order: 2;
+    }
+    .nav a {
+        width: 100%;
+    }
+    .buttonMob {
+        order: 1;
+        text-align: right;
+        padding: 7px 5% 7px 0;
+    }
+    .logo {
+        position: absolute;
+        top: 0;
+        left: 5%;
+    }
+    .address {
+        order: 3;
+        padding: 10px 5%;
+        line-height: 30px;
+        color: #fff;
+        background: #51A8B1;
+    }
+    .address strong {
+        font-size: 27px;
+    }
+    .image-gallery {
+        width: 90%;
+        margin: 0 5%;
+    }
+    .information {
+        width: 90%;
+        margin: 20px 5%;
+    }
+    .information li {
+        /* background: url("/img/icon-imovel.png") no-repeat left center; */
+        background-color: rgba(255, 255, 255, .3);
+        opacity: .5;
+        box-shadow: #333;
+        border: #333 1px solid;
+    }
+}
+
+/*Medium Smartphones*/
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .header {
+        display: flex;
+        background: #efefef;
+        flex-direction: column;
+        margin-bottom: 15px
+    }
+    .nav {
+        display: none;
+        flex-direction: column;
+    }
+    .nav a {
+        width: 100%;
+    }
+    .nav {
+        display: none;
+        flex-direction: column;
+        order: 2;
+    }
+    .nav a {
+        width: 100%;
+    }
+    .buttonMob {
+        order: 1;
+        text-align: right;
+        padding: 5px 5% 5px 0;
+    }
+    .logo {
+        position: absolute;
+        top: 0;
+        left: 5%;
+    }
+    .address {
+        order: 3;
+        padding: 10px 5%;
+        line-height: 30px;
+        color: #fff;
+        text-align: center;
+        background: #51A8B1;
+    }
+    .address strong {
+        font-size: 27px;
+    }
+    .image-gallery {
+        width: 80%;
+        margin: 0 10%;
+    }
+    .information {
+        width: 80%;
+        margin: 20px 10%;
+    }
+    .information li {
+        /* background: url("/img/icon-imovel.png") no-repeat left center; */
+        background-color: rgba(255, 255, 255, .3);
+        opacity: .5;
+        box-shadow: #333;
+        border: #333 1px solid;
+    }
+}
+
+/*Large Smartphones and small notebooks*/
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+    .header {
+        float: left;
+        width: 100%;
+        background: #efefef;
+        box-shadow: 0 2px 10px #999999;
+        margin-bottom: 25px;
+    }
+    .nav {
+        display: flex;
+    }
+    .nav a {
+        width: 25%;
+    }
+    .buttonMob {
+        display: none;
+    }
+    .logo {
+        float: left;
+        width: 30%;
+        padding: 0 0 0 10%;
+    }
+    .address {
+        float: left;
+        width: 70%;
+        padding: 20px 5% 10px 20%;
+        line-height: 35px;
+        text-align: center;
+    }
+    .address strong {
+        color: #51A8B1;
+        font-size: 27px;
+    }
+    .image-gallery {
+        width: 52%;
+        margin: 0 4%;
+    }
+    .information {
+        width: 40%;
+    }
+    .information li {
+        /* background: url("/img/icon-imovel.png") no-repeat left center; */
+        background-color: rgba(255, 255, 255, .3);
+        opacity: .5;
+        box-shadow: #333;
+        border: #333 1px solid;
+    }
+}
+
+/*XLarges screens*/
+
+@media screen and (min-width: 1200px) {
+    .header {
+        float: left;
+        width: 100%;
+        background: #efefef;
+        box-shadow: 0 2px 10px #999999;
+        margin-bottom: 25px;
+    }
+    .nav {
+        display: flex;
+    }
+    .nav a {
+        width: 25%;
+    }
+    .buttonMob {
+        display: none;
+    }
+    .logo {
+        float: left;
+        width: 20%;
+    }
+    .logo img {
+        margin: 5% 0 0 15%;
+        width: 100%;
+    }
+    .main{
+        padding: 0 5%;
+    }
+    .address {
+        float: left;
+        width: 70%;
+        padding: 20px 5% 10px 20%;
+        line-height: 35px;
+        text-align: center;
+    }
+    .address strong {
+        color: #51A8B1;
+        font-size: 27px;
+    }
+    .image-gallery {
+        width: 50%;
+        margin: 0 5%;
+    }
+    .information {
+        width: 50%;
+    }
+    .information li {
+        /* background: url("/img/icon-imovel.png") no-repeat left center; */
+        background-color: rgba(255, 255, 255, .3);
+        opacity: .5;
+        box-shadow: #333;
+        border: #333 1px solid;
+    }
+    .mapsImovel iframe {
+        height: 400px;
+    }
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    background: #38777E;
+    padding: 15px 5%;
+    font-weight: bold;
+    line-height: 35px;
+}
+
+.footer div:nth-child(2) {
+    color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .footer div:nth-child(1) {
+        flex-grow: 1;
+        text-align: center;
+    }
+    .footer div:nth-child(2) {
+        flex-grow: 5;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+    .footer div:nth-child(1) {
+        flex-grow: 1;
+        text-align: center;
+    }
+    .footer div:nth-child(2) {
+        flex-grow: 5;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .footer div:nth-child(1) {
+        flex-grow: 1;
+        text-align: center;
+    }
+    .footer div:nth-child(2) {
+        flex-grow: 5;
+    }
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario h1 {
+    color: #38777E;
+    text-align: center;
+    font-size: 30px;
+}
+
+.formulario input {
+    margin: 6px 0;
+    height: 40px;
+    color: #333;
+}
+
+.formulario input[type='text'], .formulario input[type='tel'], .formulario input[type='email'] {
+    width: 100%;
+    padding: 0 5px;
+}
+
+.formulario input[type='submit'] {
+    background: #38777E;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+.formulario textarea {
+    width: 100%;
+    height: 150px;
+    color: #333;
+    padding: 5px;
+}
+
+@media screen and (max-width: 480px) {
+    .formulario {
+        width: 90%;
+        margin: 20px 5%;
+    }
+    .formulario input[type='submit'] {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .formulario {
+        width: 80%;
+        margin: 20px 10%;
+    }
+    .formulario input[type='submit'] {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+    .formulario {
+        width: 50%;
+        margin: 20px 25%;
+    }
+    .formulario input[type='submit'] {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .formulario {
+        width: 40%;
+        margin: 20px 5%;
+    }
+    .formulario input[type='submit'] {
+        width: 30%;
+    }
 }
